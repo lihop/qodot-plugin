@@ -5,6 +5,10 @@ tool
 const DEBUG := false
 const YIELD_DURATION := 0.0
 const YIELD_SIGNAL := "timeout"
+const DEFAULT_BASE_TEXTURE_DIR := "res://textures"
+const DEFAULT_BASE_TEXTURE_DIR_SETTING := 'qodot/map/default_base_texture_dir'
+const DEFAULT_ENTITY_FGD := "res://addons/qodot/game_definitions/fgd/qodot_fgd.tres"
+const DEFAULT_ENTITY_FGD_SETTING := 'qodot/map/default_entity_fgd'
 
 signal build_complete()
 signal build_progress(step, progress)
@@ -14,8 +18,8 @@ signal unwrap_uv2_complete()
 
 var map_file := "" setget set_map_file
 var inverse_scale_factor := 16.0
-var entity_fgd := preload("res://addons/qodot/game_definitions/fgd/qodot_fgd.tres")
-var base_texture_dir := "res://textures"
+var entity_fgd := load(ProjectSettings.get_setting(DEFAULT_ENTITY_FGD_SETTING) if ProjectSettings.has_setting(DEFAULT_ENTITY_FGD_SETTING) else DEFAULT_ENTITY_FGD)
+var base_texture_dir: String = ProjectSettings.get_setting(DEFAULT_BASE_TEXTURE_DIR_SETTING) if ProjectSettings.has_setting(DEFAULT_BASE_TEXTURE_DIR_SETTING) else DEFAULT_BASE_TEXTURE_DIR
 var texture_file_extension := "png"
 
 var worldspawn_layers := [] setget set_worldspawn_layers

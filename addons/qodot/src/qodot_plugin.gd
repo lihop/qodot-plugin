@@ -84,6 +84,9 @@ func setup_project_settings() -> void:
 	try_add_project_setting('qodot/textures/ao_pattern', TYPE_STRING, QodotTextureLoader.PBR_SUFFIX_PATTERNS[QodotTextureLoader.PBRSuffix.AO])
 	try_add_project_setting('qodot/textures/depth_pattern', TYPE_STRING, QodotTextureLoader.PBR_SUFFIX_PATTERNS[QodotTextureLoader.PBRSuffix.DEPTH])
 
+	try_add_project_setting(QodotMap.DEFAULT_ENTITY_FGD_SETTING, TYPE_STRING, QodotMap.DEFAULT_ENTITY_FGD)
+	try_add_project_setting(QodotMap.DEFAULT_BASE_TEXTURE_DIR_SETTING, TYPE_STRING, QodotMap.DEFAULT_BASE_TEXTURE_DIR)
+
 func try_add_project_setting(name: String, type: int, value, info: Dictionary = {}) -> void:
 	if not ProjectSettings.has_setting(name):
 		add_project_setting(name, type, value, info)
