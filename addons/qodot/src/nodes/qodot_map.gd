@@ -336,7 +336,7 @@ func remove_children() -> void:
 
 func load_map() -> void:
 	var file: String = map_file
-	qodot.load_map(file)
+	qodot.load_map(ProjectSettings.globalize_path(file))
 
 func fetch_texture_list() -> Array:
 	return qodot.get_texture_list() as Array
