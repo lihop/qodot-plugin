@@ -137,9 +137,11 @@ func verify_parameters():
 		qodot_lib.set("entry/OSX.64", "res://addons/qodot/bin/osx/libqodot.dylib")
 		qodot_lib.set("entry/Windows.64", "res://addons/qodot/bin/win64/libqodot.dll")
 		qodot_lib.set("entry/X11.64", "res://addons/qodot/bin/x11/libqodot.so")
+		qodot_lib.set("entry/Server", "res://addons/qodot/bin/x11/libqodot.so")
 		qodot_lib.set("dependency/OSX.64", ["res://addons/qodot/bin/osx/libmap.dylib"])
 		qodot_lib.set("dependency/Windows.64", ["res://addons/qodot/bin/win64/libmap.dll"])
 		qodot_lib.set("dependency/X11.64", ["res://addons/qodot/bin/x11/libmap.so"])
+		qodot_lib.set("dependency/Server", ["res://addons/qodot/bin/x11/libmap.so"])
 
 		var qodot_script = NativeScript.new()
 		qodot_script.set("class_name", "Qodot")

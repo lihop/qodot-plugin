@@ -12,7 +12,7 @@ static func get_platform_string() -> String:
 			return "win64"
 		"OSX":
 			return "osx"
-		"X11":
+		"X11", "Server":
 			return "x11"
 	return "unsupported"
 
@@ -22,7 +22,7 @@ static func get_platform_library_extension() -> String:
 			return "dll"
 		"OSX":
 			return "dylib"
-		"X11":
+		"X11", "Server":
 			return "so"
 	return "unsupported"
 
