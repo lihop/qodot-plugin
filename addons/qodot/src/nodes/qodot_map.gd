@@ -438,6 +438,7 @@ func build_entity_nodes() -> Array:
 				if entity_definition.script_class:
 					node.set_script(entity_definition.script_class)
 
+
 		node.name = node_name
 
 		if 'origin' in properties:
@@ -463,6 +464,8 @@ func build_worldspawn_layer_nodes() -> Array:
 		node.name = "entity_0_" + worldspawn_layer.name
 		if worldspawn_layer.script_class:
 			node.set_script(worldspawn_layer.script_class)
+		if "audio_material" in worldspawn_layer:
+			node.audio_material = worldspawn_layer.audio_material
 
 		worldspawn_layer_nodes.append(node)
 		queue_add_child(self, node, entity_nodes[0])
